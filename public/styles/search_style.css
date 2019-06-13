@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 body, html{
     margin: 0;
-    background: #2b2927;
+    background: #e1dfdd;
     font-family: 'Poppins', sans-serif;
 }
-h1{
+.explore_h1{
     text-align: center;
-    color:white;
+    color:black;
 }
 .container-all{
     width: fit-content;
-    margin: 20px auto;
+    margin: 0 auto;
     height: auto;
 }
 .container{

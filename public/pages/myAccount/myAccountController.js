@@ -11,10 +11,8 @@ angular.module("myApp")
             };
             $http(req).then(function (response) {
                     var images = document.querySelectorAll("#rec img")
-                    if (!response.data[0].image == undefined)
-                        images[0].src = response.data[0].image;
-                    if (!response.data[1].image == undefined)
-                        images[1].src = response.data[1].image;
+                    images[0].src = response.data[0].image;
+                    images[1].src = response.data[1].image;
                 },
                 function errorCallback(response) {
                     console.log("onononon");
@@ -29,11 +27,9 @@ angular.module("myApp")
             };
             $http(req2).then(function (response) {
                     var images = document.querySelectorAll("#saved img")
-                if (!response.data[0].image == undefined)
                     images[0].src = response.data[0].image;
-                    if (!response.data[1].image == undefined)
                     images[1].src = response.data[1].image;
-                    },
+                },
                 function errorCallback(response) {
                     console.log("onononon");
                 });

@@ -1,3 +1,7 @@
 #username_label{  !important;
     pointer-events: none;
 }
+h2{
+    text-align: center;
+    color: grey;
+}
