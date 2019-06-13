@@ -34,5 +34,9 @@ app.config(function($routeProvider)  {
             templateUrl: 'pages/myAccount/myAccount.html',
             controller : 'myAccountController as myAccountCtrl',
         })
+        .when('/search', {
+            templateUrl: 'pages/search/search.html',
+            controller : 'searchController as searchCtrl',
+        })
         .otherwise({ redirectTo: '/' });
 });
