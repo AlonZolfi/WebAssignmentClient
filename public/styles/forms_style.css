@@ -113,10 +113,10 @@
     margin-left: 10px;
 }
 
-.form-style-8 input.ng-invalid, .form-style-8 textarea.ng-invalid {
+.form-style-8 input.ng-invalid.ng-touched, .form-style-8 textarea.ng-invalid.ng-touched {
     border: 2px solid red;
 }
 
-.form-style-8 input.ng-valid, .form-style-8 textarea.ng-valid{
+.form-style-8 input.ng-valid.ng-touched, .form-style-8 textarea.ng-valid.ng-touched{
     border: 2px solid green;
 }

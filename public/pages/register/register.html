@@ -44,7 +44,7 @@
         <div>
 
             <select ng-model="country" name="country"
-                    ng-options="x.Name, for, x in countries" required>
+                    ng-options="x.Name for x in countries" required>
             </select>
             <span ng-show="registerForm.country.$error.required && registerForm.country.$touched">This field is required!<br/></span>
         </div>
