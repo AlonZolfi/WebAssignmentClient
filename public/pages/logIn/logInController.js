@@ -9,7 +9,7 @@ angular.module("myApp")
                     $rootScope.username = $scope.user_name.valueOf();
                     $scope.userToken = response.data;
                     alert("You are sing in.. just need to know were to move you");
-                    $location.path("/"); //need to be a "recommended for you"
+                    $location.path("/myAccount"); //need to be a "recommended for you"
                 })
                 .catch(function (error) {
                     console.log("onononon");
