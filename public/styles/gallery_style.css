@@ -1,12 +1,47 @@
-div.recommended {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
+/* -------------------------------------------------------- codepen */
+h1,
+p{
+    line-height: 22vw;
 }
-div.saved {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
+.galleries{
+    width: 44vw;
+    margin: 5vw auto;
 }
+.galleries > label{
+    width: 22vw;
+    height: 22vw;
+    display: inline-block;
+}
+.galleries > label:hover{
+    text-transform: uppercase;
+}
+.galleries > .gallery > li{
+    margin: 1vw auto;
+    padding: 1vw;
+    width: auto;
+    display: none;
+}
+.galleries > .gallery > li > label.close-gallery{
+    width: 2vw;
+    height: 2vw;
+    margin-right: 0;
+    background-image: url(http://panikaro.interiowo.pl/img/cross.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+.galleries > #input-gallery-null:checked ~ .gallery > li{
+    display: none;
+}
+.galleries > #input-gallery-1:checked ~ .gallery > li.gallery-1,
+.galleries > #input-gallery-2:checked ~ .gallery > li.gallery-2,
+.galleries > #input-gallery-3:checked ~ .gallery > li.gallery-3,
+.galleries > #input-gallery-4:checked ~ .gallery > li.gallery-4{
+    display: block;
+}
+.galleries > #input-gallery-1:checked ~ label.gallery-1,
+.galleries > #input-gallery-2:checked ~ label.gallery-2,
+.galleries > #input-gallery-3:checked ~ label.gallery-3,
+.galleries > #input-gallery-4:checked ~ label.gallery-4{
+    text-transform: uppercase;
+}
+/* -------------------------------------------------------- end codepen */

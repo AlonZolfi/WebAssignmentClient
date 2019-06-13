@@ -2,28 +2,39 @@
 angular.module("myApp")
     .controller("myAccountController", [ '$scope','$http', '$location','$rootScope','$window',
         function ($scope,$http, $location, $rootScope, $window) {
-            function getRecPOI() {
-                var myObj = {key: "x-auth-token",value: $window.sessionStorage.getItem("token") };
-                var myJSON = JSON.stringify(myObj);
-                $http.post('http://localhost:3000/recommendedPOI', myJSON)
-                    .then(function (response) {
-                        console.log("hbdfhdfhd");
-                    })
-                    .catch(function (error) {
-                        console.log("onononon");
-                    });
+            var req = {
+                method: 'POST',
+                url: 'http://localhost:3000/private/recommendedPOI',
+                headers: {
+                    'x-auth-token': $window.sessionStorage.getItem("token")
+                }
             };
+            $http(req).then(function (response) {
+                    var images = document.querySelectorAll("#rec img")
+                    if (!response.data[0].image == undefined)
+                        images[0].src = response.data[0].image;
+                    if (!response.data[1].image == undefined)
+                        images[1].src = response.data[1].image;
+                },
+                function errorCallback(response) {
+                    console.log("onononon");
+                });
 
-            function getSavedPOI() {
-                var myObj = {key: "x-auth-token",value: $window.sessionStorage.getItem("token") };
-                var myJSON = JSON.stringify(myObj);
-                $http.post('http://localhost:3000/lastPOIsSaved', myJSON)
-                    .then(function (response) {
-                        console.log("hbdfhdfhd");
-                    })
-                    .catch(function (error) {
-                        console.log("onononon");
-                    });
+            var req2 = {
+                method: 'POST',
+                url: 'http://localhost:3000/private/lastPOIsSaved',
+                headers: {
+                    'x-auth-token': $window.sessionStorage.getItem("token")
+                }
             };
-
+            $http(req2).then(function (response) {
+                    var images = document.querySelectorAll("#saved img")
+                if (!response.data[0].image == undefined)
+                    images[0].src = response.data[0].image;
+                    if (!response.data[1].image == undefined)
+                    images[1].src = response.data[1].image;
+                    },
+                function errorCallback(response) {
+                    console.log("onononon");
+                });
         }]);
