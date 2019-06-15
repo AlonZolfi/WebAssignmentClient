@@ -29,7 +29,7 @@ angular.module("myApp")
             $http.post('http://localhost:3000/registerUser', myJSON)
                 .then(function (response, $location) {
                     alert("Registered Successfully");
-                    $location.path('/logIn');
+                    $location.path('/login');
                 })
                 .catch(function(error){
                     if(error.data.message.includes("PRIMARY KEY"))

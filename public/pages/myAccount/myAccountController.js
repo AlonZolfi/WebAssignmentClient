@@ -10,9 +10,9 @@ angular.module("myApp")
                 }
             };
             $http(req).then(function (response) {
-                    var images = document.querySelectorAll("#rec img")
-                    images[0].src = response.data[0].image;
-                    images[1].src = response.data[1].image;
+                    $scope.rec = rec = [];
+                    rec.push(response.data[0]);
+                    rec.push(response.data[1]);
                 },
                 function errorCallback(response) {
                     console.log("onononon");
@@ -26,11 +26,19 @@ angular.module("myApp")
                 }
             };
             $http(req2).then(function (response) {
-                    var images = document.querySelectorAll("#saved img")
-                    images[0].src = response.data[0].image;
-                    images[1].src = response.data[1].image;
+                    if (response.data.length == 0){
+                        $scope.stringSaved = "You did'nt save any Point Of Interest"
+                    }
+                    else
+                    {
+                        $scope.stringSaved = "Your saved Point Of Interest"
+                        $scope.saved = saved = [];
+                        saved.push(response.data[0]);
+                        saved.push(response.data[1]);
+                    }
                 },
                 function errorCallback(response) {
                     console.log("onononon");
                 });
+
         }]);
