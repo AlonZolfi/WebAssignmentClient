@@ -1,6 +1,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<label for="sortby">Sort By:</label>
+<select id="sortby" ng-change="sortBy()" ng-model="selected_sort">
+    <option selected hidden disabled>{{selected_sort}}</option>
+    <option >Name</option>
+    <option>Rank</option>
+</select>
 <h1 class="explore_h1">Explore City's Best Places</h1>
+
 <div class="container-all search">
+
     <div class="container" ng-repeat="image in pois">
         <img ng-src="{{image.image}}" alt="">
         <span class="title">{{image.name}}</span>

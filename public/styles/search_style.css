@@ -66,8 +66,8 @@ body, html{
     display:block;
     overflow:hidden;
     cursor:pointer;
-    align-content: center;
     height: 50%;
+    text-align: center;
 }
 .title{
     position:absolute;
