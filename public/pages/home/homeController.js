@@ -4,7 +4,7 @@ angular.module("myApp")
         /*for(i=0; i<quadimages.length; i++) {
             quadimages[i].addEventListener('click', function(){ this.classList.toggle("expanded"); quad.classList.toggle("full") });
         }*/
-        var minimalRank = 3;
+        var minimalRank = 0;
         $http.get('http://localhost:3000/randomPOI/'+minimalRank)
             .then(function (response) {
                 $scope.images = images = [];

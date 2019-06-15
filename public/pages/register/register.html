@@ -37,8 +37,8 @@
                    ng-model="password" ng-minlength="5" ng-maxlength="10"
                    placeholder="Password" required>
             <span ng-show="registerForm.password.$error.required && registerForm.password.$touched">This field is required!<br/></span>
-            <span ng-show="registerForm.password.$error.minlength">Minimum length is 3<br/></span>
-            <span ng-show="registerForm.password.$error.maxlength">Maximum length is 8<br/></span>
+            <span ng-show="registerForm.password.$error.minlength">Minimum length is 5<br/></span>
+            <span ng-show="registerForm.password.$error.maxlength">Maximum length is 10<br/></span>
             <span ng-show="registerForm.password.$invalid && registerForm.password.$touched">Invalid field</span>
         </div>
         <div>
