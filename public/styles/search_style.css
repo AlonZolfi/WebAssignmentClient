@@ -8,16 +8,6 @@ body, html{
     text-align: center;
     color:black;
 }
-.rec-all{
-    width: fit-content;
-    margin: 0 auto;
-    height: auto;
-}
-.saved-all{
-    width: fit-content;
-    margin: 0 auto;
-    height: auto;
-}
 .home_h2{
     margin: 50px;
 }
@@ -30,6 +20,14 @@ body, html{
     width: fit-content;
     margin: 100px;
     height: auto;
+}
+.container-all.my-account{
+     width: fit-content;
+     margin-left: 25%;
+     height: auto;
+}
+.container-all.my-account>h4{
+    font-size: 50px;
 }
 .container{
     width: calc(33% - 6px);
@@ -63,11 +61,16 @@ body, html{
     width: 100%;
     transition-duration: .3s;
     max-width: 100%;
-    display:block;
-    overflow:hidden;
     cursor:pointer;
-    align-content: center;
     height: 50%;
+}
+.saved{
+    position: absolute;
+    top: 65%;
+}
+.rec{
+    position: absolute;
+    top: 5%;
 }
 .title{
     position:absolute;
