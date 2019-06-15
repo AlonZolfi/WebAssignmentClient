@@ -7,10 +7,10 @@ angular.module("myApp")
         var minimalRank = 3;
         $http.get('http://localhost:3000/randomPOI/'+minimalRank)
             .then(function (response) {
-                var images = document.querySelectorAll("#quad img");
-                images[0].src = response.data[0].image;
-                images[1].src = response.data[1].image;
-                images[2].src = response.data[2].image;
+                $scope.images = images = [];
+                images.push(response.data[0]);
+                images.push(response.data[1]);
+                images.push(response.data[2]);
             })
             .catch(function (error) {
                 console.log("dsa");
