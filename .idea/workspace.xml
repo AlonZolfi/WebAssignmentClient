@@ -4,8 +4,7 @@
     <list default="true" id="f47ef1c0-b709-4e78-9bcc-5c8ebff6708f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/pages/myAccount/myAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/myAccount/myAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/myAccount/myAccountController.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/myAccount/myAccountController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/gallery_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/gallery_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/search_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/search_style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,20 +26,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/pages/myAccount/myAccount.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+            <state relative-caret-position="476">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/styles/gallery_style.css">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/styles/search_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+            <state relative-caret-position="510">
+              <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -59,6 +58,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>my web</find>
+      <find>h2</find>
+      <find>re</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -81,13 +82,13 @@
         <option value="$PROJECT_DIR$/public/pages/search/searchController.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/pages/search/search.html" />
-        <option value="$PROJECT_DIR$/public/styles/search_style.css" />
         <option value="$PROJECT_DIR$/public/pages/home/homeController.js" />
         <option value="$PROJECT_DIR$/public/pages/register/register.html" />
         <option value="$PROJECT_DIR$/public/pages/register/registerController.js" />
         <option value="$PROJECT_DIR$/public/pages/home/home.html" />
         <option value="$PROJECT_DIR$/public/styles/gallery_style.css" />
         <option value="$PROJECT_DIR$/public/pages/myAccount/myAccountController.js" />
+        <option value="$PROJECT_DIR$/public/styles/search_style.css" />
         <option value="$PROJECT_DIR$/public/pages/myAccount/myAccount.html" />
       </list>
     </option>
@@ -253,11 +254,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560604558318</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="better then before">
+      <created>1560606693933</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1560606693933</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25772000" />
+    <option name="totallyTimeSpent" value="28685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
@@ -311,7 +319,8 @@
     <MESSAGE value="added photos to main page" />
     <MESSAGE value="added photos and fixed positioning" />
     <MESSAGE value="changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <MESSAGE value="better then before" />
+    <option name="LAST_COMMIT_MESSAGE" value="better then before" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -495,17 +504,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/styles/search_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/pages/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/gallery_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/search_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -518,15 +534,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/pages/myAccount/myAccount.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/styles/gallery_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+        <state relative-caret-position="476">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
