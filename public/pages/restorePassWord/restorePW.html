@@ -1,0 +1,16 @@
+<div>
+    <form class="form-style-9" name="restoreForm" ng-submit="restorePW()" novalidate>
+        <h3>Restore password</h3>
+        <input type="text" name="user_name_restored" ng-model="user_name_restored" placeholder="User Name" required/>
+        <!--<span ng-show="loginForm.user_name.$error.required && loginForm.user_name.$touched">This is required! </span>-->
+        <select ng-model="question_restored" name="question_restored" ng-options="x.question for x in questions" required></select>
+        <input type="text" name="user_ans_restored" ng-model="user_ans_restored" placeholder="Answer" required/>
+        <!--<span ng-show="loginForm.user_pass.$error.required  && loginForm.user_pass.$touched">This is required! </span>-->
+        <br/>
+        <br/>
+        <h3>{{passWD}}</h3>
+        <br/>
+        <br/>
+        <input ng-disabled="restoreForm.$invalid" type="submit" id="submit2" value="Submit">
+    </form>
+</div>

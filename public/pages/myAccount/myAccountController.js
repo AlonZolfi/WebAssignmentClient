@@ -34,7 +34,8 @@ angular.module("myApp")
                         $scope.stringSaved = "Your saved Point Of Interest"
                         $scope.saved = saved = [];
                         saved.push(response.data[0]);
-                        saved.push(response.data[1]);
+                        if(response.data.length>1)
+                            saved.push(response.data[1]);
                     }
                 },
                 function errorCallback(response) {

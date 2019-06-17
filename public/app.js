@@ -46,5 +46,9 @@ app.config(function($routeProvider)  {
             templateUrl: 'pages/favorites/favorites.html',
             controller : 'favoritesController as favoritesCtrl',
         })
+        .when('/restorePW', {
+            templateUrl: 'pages/restorePassWord/restorePW.html',
+            controller : 'restorePWController as restorePWCtrl',
+        })
         .otherwise({ redirectTo: '/' });
 });
