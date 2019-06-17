@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f47ef1c0-b709-4e78-9bcc-5c8ebff6708f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/register/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/register/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/register/registerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/register/registerController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/restorePassWord/restorePWController.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/restorePassWord/restorePWController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pages/myAccount/myAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/myAccount/myAccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pages/myAccount/myAccountController.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/myAccount/myAccountController.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/pages/myAccount/myAccount.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+            <state relative-caret-position="374">
+              <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -39,6 +38,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/pages/about/about.html">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/pages/myAccount/myAccountController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -50,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/pages/restorePassWord/restorePWController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
@@ -129,9 +137,7 @@
         <option value="$PROJECT_DIR$/public/openPOI.js" />
         <option value="$PROJECT_DIR$/public/openPOI.css" />
         <option value="$PROJECT_DIR$/public/openPOI.html" />
-        <option value="$PROJECT_DIR$/public/pages/myAccount/myAccountController.js" />
         <option value="$PROJECT_DIR$/public/openPOIservice.js" />
-        <option value="$PROJECT_DIR$/public/pages/myAccount/myAccount.html" />
         <option value="$PROJECT_DIR$/public/services.js" />
         <option value="$PROJECT_DIR$/public/דקרהןבקד.css" />
         <option value="$PROJECT_DIR$/public/services.css" />
@@ -147,6 +153,8 @@
         <option value="$PROJECT_DIR$/public/pages/register/register.html" />
         <option value="$PROJECT_DIR$/public/pages/register/registerController.js" />
         <option value="$PROJECT_DIR$/public/pages/restorePassWord/restorePWController.js" />
+        <option value="$PROJECT_DIR$/public/pages/myAccount/myAccountController.js" />
+        <option value="$PROJECT_DIR$/public/pages/myAccount/myAccount.html" />
       </list>
     </option>
   </component>
@@ -192,6 +200,13 @@
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="logIn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebAssignmentClient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebAssignmentClient" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="myAccount" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WebAssignmentClient" type="b2602c69:ProjectViewProjectNode" />
@@ -270,7 +285,7 @@
       <workItem from="1560416312587" duration="11118000" />
       <workItem from="1560434217617" duration="12085000" />
       <workItem from="1560788661368" duration="7860000" />
-      <workItem from="1560800001407" duration="289000" />
+      <workItem from="1560800001407" duration="724000" />
     </task>
     <task id="LOCAL-00001" summary="fixed controllers problem">
       <created>1560423352792</created>
@@ -349,11 +364,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560796888650</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="better register">
+      <created>1560800370368</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1560800370368</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48678000" />
+    <option name="totallyTimeSpent" value="49113000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
@@ -391,7 +413,8 @@
     <MESSAGE value="better then before" />
     <MESSAGE value="my account is raddy" />
     <MESSAGE value="restore password" />
-    <option name="LAST_COMMIT_MESSAGE" value="restore password" />
+    <MESSAGE value="better register" />
+    <option name="LAST_COMMIT_MESSAGE" value="better register" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -586,13 +609,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/services.js" />
-    <entry file="file://$PROJECT_DIR$/public/pages/myAccount/myAccountController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/pages/about/aboutController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -619,13 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/pages/myAccount/myAccount.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -664,6 +673,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/myAccount/myAccountController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/myAccount/myAccount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
         </state>
       </provider>
     </entry>
