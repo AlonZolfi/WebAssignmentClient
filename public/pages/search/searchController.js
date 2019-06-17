@@ -46,10 +46,12 @@ angular.module("myApp")
             }
         };
         $scope.starClick = function (idx) {
-            starManage.manageStar("search",idx,$scope.pois[idx].id);
-            if(angular.element('#search_span' + idx).hasClass("fa-star"))
-                $scope.num_of_fav--;
-            else
-                $scope.num_of_fav++;
+            starManage.manageStar("search",idx,$scope.pois[idx].id)
+                .then(function() {
+                    if (angular.element('#search_span' + idx).hasClass("fa-star"))
+                        $scope.num_of_fav--;
+                    else
+                        $scope.num_of_fav++;
+                });
         }
     }]);
