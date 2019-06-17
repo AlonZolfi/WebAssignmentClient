@@ -1,19 +1,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <h2 class="home_h2">Barcelona Website</h2>
 <div class="container-all home">
-    <div class="container">
-        <img ng-src="{{images[0].image}}" alt="">
+    <div class="container" ng-click="showPOI(0)">
+        <img ng-src="{{images[0].image}}" alt="" >
         <span class="title">{{images[0].name}}</span>
         <span class="text">Category: {{images[0].category}}</span>
     </div>
-    <div class="container">
+    <div class="container" ng-click="showPOI(1)">
         <img ng-src="{{images[1].image}}" alt="">
         <span class="title">{{images[1].name}}</span>
         <span class="text">Category: {{images[1].category}}</span>
     </div>
-    <div class="container">
+    <div class="container" ng-click="showPOI(2)">
         <img ng-src="{{images[2].image}}" alt="">
         <span class="title">{{images[2].name}}</span>
         <span class="text">Category: {{images[2].category}}</span>
     </div>
 </div>
+

@@ -11,11 +11,18 @@ body, html{
 .home_h2{
     margin: 50px;
 }
+
 .container-all.search{
     width: fit-content;
     margin: 0 auto;
     height: auto;
 }
+.container-all.fav{
+    width: fit-content;
+    margin: 0 auto;
+    height: auto;
+}
+
 .container-all.home{
     width: fit-content;
     margin: 100px;
@@ -48,6 +55,17 @@ body, html{
     cursor:pointer;
     height:30%;
 }
+
+.fav > .container > img{
+    width: 100%;
+    transition-duration: .3s;
+    max-width: 100%;
+    display:block;
+    overflow:hidden;
+    cursor:pointer;
+    height:30%;
+}
+
 .home > .container > img{
     width: 100%;
     transition-duration: .3s;

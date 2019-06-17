@@ -1,9 +1,5 @@
 angular.module("myApp")
-    .controller("homeController", ['$scope','$http', function($scope,$http){
-        //var quadimages = document.querySelectorAll("#quad figure");
-        /*for(i=0; i<quadimages.length; i++) {
-            quadimages[i].addEventListener('click', function(){ this.classList.toggle("expanded"); quad.classList.toggle("full") });
-        }*/
+    .controller("homeController", ['$scope','$http','$rootScope','$location', function($scope,$http,$rootScope,$location){
         var minimalRank = 0;
         $http.get('http://localhost:3000/randomPOI/'+minimalRank)
             .then(function (response) {
@@ -15,4 +11,9 @@ angular.module("myApp")
             .catch(function (error) {
                 console.log("dsa");
             });
+        $scope.showPOI = function (num) {
+            $rootScope.poiToShow = images[num];
+            $location.path('/showPOI');
+        }
+
     }]);

@@ -1,52 +1,59 @@
-<html lang="en">
-    <head>
-        <title>Vacation Advisor</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <link href="styles/forms_style.css" rel="stylesheet" type="text/css"/>
-        <link href="styles/main_style.css" rel="stylesheet" type="text/css"/>
-        <link href="styles/search_style.css" rel="stylesheet" type="text/css"/>
-    </head>
+<html>
+<head>
+    <title>Vacation Advisor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="styles/forms_style.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/main_style.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/search_style.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/modal_style.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/star_style.css" rel="stylesheet" type="text/css"/>
+</head>
 
-    <body ng-app="myApp">
-        <!-- load angular -->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
-        <script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
+<body ng-app="myApp">
+<!-- load angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+<script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
 
-        <!-- load app -->
-        <script src="app.js"></script>
+<!-- load app -->
+<script src="app.js"></script>
+<script src="pages/services.js"></script>
 
-        <!-- load controllers -->
-        <script src="pages/about/aboutController.js"></script>
-        <script src="pages/poi/poiController.js"></script>
-        <script src="pages/http/httpController.js"></script>
-        <script src="pages/logIn/logInController.js"></script>
-        <script src="pages/register/registerController.js"></script>
-        <script src="pages/myAccount/myAccountController.js"></script>
-        <script src="pages/search/searchController.js"></script>
-        <script src="pages/home/homeController.js"></script>
+<!-- load controllers -->
+<script src="pages/about/aboutController.js"></script>
+<script src="pages/poi/poiController.js"></script>
+<script src="pages/http/httpController.js"></script>
+<script src="pages/logIn/logInController.js"></script>
+<script src="pages/register/registerController.js"></script>
+<script src="pages/myAccount/myAccountController.js"></script>
+<script src="pages/search/searchController.js"></script>
+<script src="pages/home/homeController.js"></script>
+<script src="pages/showPOI/showPOIController.js"></script>
+<script src="pages/favorites/favoritesController.js"></script>
 
-        <!-- Top Menu -->
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid" ng-init="$root.username='Guest'">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Vacation Advisor</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#!search">Explore</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a id="username_label">Hello {{$root.username}}</a></li>
-                    <li ng-show="$root.username=='Guest'"><a href="#!register"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-                    <li ng-show="$root.username=='Guest'"><a href="#!login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    <li><a href="#!myAccount" ng-hide="$root.username=='Guest'">My Account</a></li>
-                    <li><a href="#" ng-controller="logInController" ng-click="logOut()" ng-hide="$root.username=='Guest'"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!-- This section changes as the hashbang changes -->
-        <div ng-view></div>
-    </body>
+<!-- Top Menu -->
+<nav class="navbar navbar-inverse" style="width: 100%">
+    <div class="container-fluid" ng-init="$root.username='Guest'; $root.userLogged='No'">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Vacation Advisor</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#!search">Explore</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a id="username_label">Hello {{$root.username}}</a></li>
+            <li ng-show="$root.userLogged=='No'"><a href="#!register"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+            <li ng-show="$root.userLogged=='No'"><a href="#!login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="#!myAccount" ng-show="$root.userLogged=='Yes'">My Account</a></li>
+            <li><a href="#!favorites" ng-show="$root.userLogged=='Yes'">Favorites</a></li>
+            <li><a href="#" ng-controller="logInController" ng-click="logOut()" ng-show="$root.userLogged=='Yes'"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- This section changes as the hashbang changes -->
+<div ng-view></div>
+</body>
 </html>

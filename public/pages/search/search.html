@@ -5,13 +5,20 @@
     <option >Name</option>
     <option>Rank</option>
 </select>
+<label ng-show="$root.userLogged=='Yes'" style="float: right">You saved {{num_of_fav}} Favorites</label>
 <h1 class="explore_h1">Explore City's Best Places</h1>
 
 <div class="container-all search">
 
     <div class="container" ng-repeat="image in pois">
         <img ng-src="{{image.image}}" alt="">
+        <div class="click" ng-click="starClick($index)" id="search_click{{$index}}" ng-show="$root.userLogged=='Yes'">
+            <span class="fa fa-star-o" id="search_span{{$index}}"></span>
+            <div class="ring" id="search_ring{{$index}}"></div>
+            <div class="ring2" id="search_ring2{{$index}}"></div>
+        </div>
         <span class="title">{{image.name}}</span>
         <span class="text">Category: {{image.category}}</span>
+
     </div>
 </div>

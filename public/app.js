@@ -38,5 +38,13 @@ app.config(function($routeProvider)  {
             templateUrl: 'pages/search/search.html',
             controller : 'searchController as searchCtrl',
         })
+        .when('/showPOI', {
+            templateUrl: 'pages/showPOI/showPOI.html',
+            controller : 'showPOIController as showPOICtrl',
+        })
+        .when('/favorites', {
+            templateUrl: 'pages/favorites/favorites.html',
+            controller : 'favoritesController as favoritesCtrl',
+        })
         .otherwise({ redirectTo: '/' });
 });
