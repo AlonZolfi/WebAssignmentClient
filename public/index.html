@@ -32,6 +32,7 @@
 <script src="pages/home/homeController.js"></script>
 <script src="pages/showPOI/showPOIController.js"></script>
 <script src="pages/favorites/favoritesController.js"></script>
+<script src="pages/rank/rankController.js"></script>
 
 <!-- Top Menu -->
 <nav class="navbar navbar-inverse" style="width: 100%">
@@ -55,5 +56,8 @@
 </nav>
 <!-- This section changes as the hashbang changes -->
 <div ng-view></div>
+<div ng-include="'pages/rank/rank.html'" ng-show="$root.pointOfInterestClicked!=undefined"></div>
+
+
 </body>
 </html>

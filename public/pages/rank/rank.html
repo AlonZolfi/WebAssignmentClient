@@ -1,0 +1,20 @@
+<div class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form class="form-style-8" name="rankForm" ng-submit="submit()" novalidate autocomplete="off">
+            <h3>Rank {{$root.pointOfInterestClicked.name}}</h3>
+            <div>
+                <input type="number" min="1" max="5" name="rank_number" ng-model="rank_number" placeholder="Your Rank" required>
+                <span ng-show="rankForm.rank_number.$error.min && rankForm.first_name.$touched">Minimum rank is 1<br/></span>
+                <span ng-show="rankForm.rank_number.$error.max && rankForm.first_name.$touched">Maximum rank is 5<br/></span>
+                <span ng-show="rankForm.rank_number.$error.required && rankForm.rank_number.$touched">This field is required!<br/></span>
+                <span ng-show="rankForm.rank_number.$invalid && rankForm.rank_number.$touched">Invalid field</span>
+            </div>
+            <div>
+                <input type="text" name="desc" ng-model="desc" placeholder="Description">
+            </div>
+            <input ng-disabled="rankForm.$invalid" type="submit" id="rank_submit" value="Submit">
+        </form>
+    </div>
+</div>
