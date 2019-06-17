@@ -7,6 +7,9 @@
         <!--<span ng-show="loginForm.user_pass.$error.required  && loginForm.user_pass.$touched">This is required! </span>-->
         <br/>
         <br/>
+        <input type="button" value="Restore Password" ng-click="restorePW()">
+        <br/>
+        <br/>
         <input ng-disabled="loginForm.$invalid" type="submit" id="submit" value="Submit">
     </form>
 </div>
