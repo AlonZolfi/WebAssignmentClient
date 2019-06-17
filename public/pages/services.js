@@ -10,15 +10,15 @@ angular.module("myApp")
     .factory("starManage",['$http','$window',function($http,$window) {
         var starData = {};
         starData.manageStar = function(page_name, idx, poi_id) {
-            if ($('#'+page_name+'_span' + idx).hasClass("fa-star")) {
-                $('#'+page_name+'_click' + idx).removeClass('active');
+            if (angular.element('#'+page_name+'_span' + idx).hasClass("fa-star")) {
+                angular.element('#'+page_name+'_click' + idx).removeClass('active');
                 setTimeout(function () {
-                    $('#'+page_name+'_click' + idx).removeClass('active-2')
+                    angular.element('#'+page_name+'_click' + idx).removeClass('active-2')
                 }, 30);
-                $('#'+page_name+'_click' + idx).removeClass('active-3');
+                angular.element('#'+page_name+'_click' + idx).removeClass('active-3');
                 setTimeout(function () {
-                    $('#'+page_name+'_span' + idx).removeClass('fa-star');
-                    $('#'+page_name+'_span' + idx).addClass('fa-star-o')
+                    angular.element('#'+page_name+'_span' + idx).removeClass('fa-star');
+                    angular.element('#'+page_name+'_span' + idx).addClass('fa-star-o')
                 }, 15);
                 var req1 = {
                     method: 'POST',
@@ -30,16 +30,16 @@ angular.module("myApp")
                         'poi_id': poi_id
                     }
                 };
-                $http(req1);
+                return $http(req1);
             } else {
-                $('#'+page_name+'_click' + idx).addClass('active');
-                $('#'+page_name+'_click' + idx).addClass('active-2');
+                angular.element('#'+page_name+'_click' + idx).addClass('active');
+                angular.element('#'+page_name+'_click' + idx).addClass('active-2');
                 setTimeout(function () {
-                    $('#'+page_name+'_span' + idx).addClass('fa-star');
-                    $('#'+page_name+'_span' + idx).removeClass('fa-star-o')
+                    angular.element('#'+page_name+'_span' + idx).addClass('fa-star');
+                    angular.element('#'+page_name+'_span' + idx).removeClass('fa-star-o')
                 }, 150);
                 setTimeout(function () {
-                    $('#'+page_name+'_click' + idx).addClass('active-3');
+                    angular.element('#'+page_name+'_click' + idx).addClass('active-3');
                 }, 150);
                 var req2 = {
                     method: 'POST',
@@ -51,7 +51,7 @@ angular.module("myApp")
                         'poi_id': poi_id
                     }
                 };
-                $http(req2);
+                return $http(req2);
             }
         };
         return starData;

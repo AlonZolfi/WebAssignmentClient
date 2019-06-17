@@ -17,8 +17,8 @@ angular.module("myApp")
                         for (let i = 0; i < pois_to_show.length; i++) {
                             for (let j = 0; j < response.data.length; j++) {
                                 if (response.data[j].id == pois_to_show[i].id) {
-                                    $('#search_click' + i).addClass('active active-2 active-3');
-                                    $('#search_span' + i).addClass('fa-star').removeClass('fa-star-o');
+                                    angular.element('#search_click' + i).addClass('active active-2 active-3');
+                                    angular.element('#search_span' + i).addClass('fa-star').removeClass('fa-star-o');
                                     $scope.num_of_fav++;
                                 }
                             }
@@ -46,10 +46,12 @@ angular.module("myApp")
             }
         };
         $scope.starClick = function (idx) {
-            starManage.manageStar("search",idx,$scope.pois[idx].id);
-            if($('#search_span' + idx).hasClass("fa-star"))
-                $scope.num_of_fav--;
-            else
-                $scope.num_of_fav++;
+            starManage.manageStar("search",idx,$scope.pois[idx].id)
+                .then(function() {
+                    if (angular.element('#search_span' + idx).hasClass("fa-star"))
+                        $scope.num_of_fav--;
+                    else
+                        $scope.num_of_fav++;
+                });
         }
     }]);
