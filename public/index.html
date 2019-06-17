@@ -57,7 +57,7 @@
 </nav>
 <!-- This section changes as the hashbang changes -->
 <div ng-view></div>
-<div ng-include="'pages/rank/rank.html'" ng-show="$root.pointOfInterestClicked!=undefined"></div>
+<div ng-include="'pages/rank/rank.html'" ng-controller="rankController as rankCtrl"></div>
 
 
 </body>

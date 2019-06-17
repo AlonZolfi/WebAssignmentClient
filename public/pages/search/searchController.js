@@ -55,6 +55,7 @@ angular.module("myApp")
                 });
         };
         $scope.goToRank = function(idx){
-            $rootScope.pointOfInterestClicked = $scope.pois[idx];
+            angular.element('.modal').css('display','inline-block');
+            $rootScope.pointOfInterest = $scope.pois[idx];
         }
     }]);
