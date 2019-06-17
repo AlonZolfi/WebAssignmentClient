@@ -6,8 +6,8 @@
 <div class="container-all fav">
     <div class="container" ng-repeat="image in saved_pois">
         <img ng-src="{{image.image}}" alt="">
-        <div class="click" ng-click="starClick($index)" id="favorits_click{{$index}}">
-            <span class="fa fa-star-o" id="favorits_span{{$index}}"></span>
+        <div class="click active active-2 active-3" ng-click="starClick($index)" id="favorits_click{{$index}}">
+            <span class="fa fa-star" id="favorits_span{{$index}}"></span>
             <div class="ring" id="favorits_ring{{$index}}"></div>
             <div class="ring2" id="favorits_ring2{{$index}}"></div>
         </div>

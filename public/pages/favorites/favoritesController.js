@@ -13,10 +13,6 @@ angular.module("myApp")
                 .then(function (response) {
                     $scope.saved_pois = response.data;
                     $scope.num_of_fav = response.data.length;
-                    for (var j = 0; j < $scope.saved_pois.length; j++) {
-                        $('#favorits_click' + j).addClass('active active-2 active-3');
-                        $('#favorits_span' + j).addClass('fa-star').removeClass('fa-star-o');
-                    }
                 });
         });
         $scope.starClick = function (idx) {
