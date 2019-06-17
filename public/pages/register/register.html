@@ -50,13 +50,13 @@
         </div>
         <div>
             <select id="interests" ng-model="category" name="category"
-                    ng-options="x.category_name for x in interests" multiple required>
+                    ng-options="x.category_name for x in interests" multiple>2 required>
             </select>
             <span ng-show="registerForm.category.$error.required && registerForm.category.$touched">This field is required!<br/></span>
         </div>
         <div>
             <select ng-model="question1" name="question1"
-                    ng-options="x.question for x in questions" required>
+                    ng-options="x.question for x in questionsOne" required>
             </select>
             <span ng-show="registerForm.question1.$error.required && registerForm.question1.$touched">This field is required!<br/></span>
         </div>
@@ -68,7 +68,7 @@
 
         <div>
             <select ng-model="question2" name="question2"
-                    ng-options="x.question for x in questions" required>
+                    ng-options="x.question for x in questionsTwo" required>
             </select>
             <span ng-show="registerForm.question2.$error.required && registerForm.question2.$touched">This field is required!<br/></span>
         </div>

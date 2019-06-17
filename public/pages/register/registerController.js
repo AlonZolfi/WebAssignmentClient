@@ -47,13 +47,15 @@ angular.module("myApp")
             });
         $scope.countries = countries;
         $scope.country = countries[0];
-        $scope.questions = [
+        $scope.questionsOne = [
             {
                 "question": "Whats the name of your elementary school?"
             },
             {
                 "question": "Whats your mothers family name before marriage?"
-            },
+            }
+        ];
+        $scope.questionsTwo = [
             {
                 "question": "What was your first pet name?"
             },
@@ -61,8 +63,8 @@ angular.module("myApp")
                 "question": "Whats the name of your best friend?"
             }
         ];
-        $scope.question1 = $scope.questions[0];
-        $scope.question2 = $scope.questions[1];
+        $scope.question1 = $scope.questionsOne[0];
+        $scope.question2 = $scope.questionsTwo[0];
     });
 
 var countries = [
