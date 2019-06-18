@@ -1,28 +1,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="container-all my-account rec">
-    <h4> Our recommended place </h4>
+    <h4> Our recommended places </h4>
     <div class="container">
-        <img ng-src="{{rec[0].image}}" alt="">
-        <span class="title">{{rec[0].name}}</span>
-        <span class="text">Category: {{rec[0].category}}</span>
+        <img ng-src="{{rec[0].image}}" alt=""  ng-click="showPOIRecommended(0)">
+        <span class="title" ng-click="showPOIRecommended(0)">{{rec[0].name}}</span>
+        <span class="text" ng-click="showPOIRecommended(0)">Category: {{rec[0].category}}</span>
     </div>
     <div class="container">
-        <img ng-src="{{rec[1].image}}" alt="">
-        <span class="title">{{rec[1].name}}</span>
-        <span class="text">Category: {{rec[1].category}}</span>
+        <img ng-src="{{rec[1].image}}" alt=""  ng-click="showPOIRecommended(1)">
+        <span class="title"  ng-click="showPOIRecommended(1)">{{rec[1].name}}</span>
+        <span class="text"  ng-click="showPOIRecommended(1)">Category: {{rec[1].category}}</span>
     </div>
 </div>
 
 <div class="container-all my-account saved">
     <h4> {{stringSaved}} </h4>
-        <div class="container" ng-show="saved.length>0">
-            <img ng-src="{{saved[0].image}}" alt="">
-            <span class="title">{{saved[0].name}}</span>
-            <span class="text">Category: {{saved[0].category}}</span>
+        <div class="container" ng-show="saved.length>0" >
+            <img ng-src="{{saved[0].image}}" alt="" ng-click="showPOISaved(0)">
+            <span class="title" ng-click="showPOISaved(0)">{{saved[0].name}}</span>
+            <span class="text" ng-click="showPOISaved(0)">Category: {{saved[0].category}}</span>
         </div>
-        <div class="container" ng-show="saved.length>1">
-            <img ng-src="{{saved[1].image}}" alt="">
-            <span class="title">{{saved[1].name}}</span>
-            <span class="text">Category: {{saved[1].category}}</span>
+        <div class="container" ng-show="saved.length>1" >
+            <img ng-src="{{saved[1].image}}" alt="" ng-click="showPOISaved(1)">
+            <span class="title" ng-click="showPOISaved(1)">{{saved[1].name}}</span>
+            <span class="text" ng-click="showPOISaved(1)">Category: {{saved[1].category}}</span>
         </div>
 </div>

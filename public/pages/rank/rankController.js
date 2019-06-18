@@ -1,6 +1,8 @@
 angular.module("myApp")
     .controller("rankController",['$scope','$http','$window','$rootScope', function ($scope, $http,$window,$rootScope) {
         $scope.submit = function (form) {
+            if(form.desc===undefined)
+                form.desc="";
             var req = {
                 method: 'POST',
                 url: 'http://localhost:3000/private/rankPOI',

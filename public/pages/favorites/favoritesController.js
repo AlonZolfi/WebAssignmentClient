@@ -1,5 +1,5 @@
 angular.module("myApp")
-    .controller("favoritesController",['$scope','$http','$window','starManage','$route',function($scope,$http,$window,starManage,$route) {
+    .controller("favoritesController",['$scope','$http','$window','starManage','$route','$rootScope','$location',function($scope,$http,$window,starManage,$route,$rootScope,$location) {
         var req1 = {
             method: 'POST',
             url: 'http://localhost:3000/private/listFavPOI',
@@ -38,5 +38,9 @@ angular.module("myApp")
                 };
                 $scope.saved_pois.sort(compareRank);
             }
+        };
+        $scope.showPOI = function (num) {
+            $rootScope.poiToShow = $scope.saved_pois[num];
+            $location.path('/showPOI');
         };
     }]);

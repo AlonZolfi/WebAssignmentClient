@@ -1,8 +1,12 @@
 angular.module("myApp")
-    .controller("searchController",['$scope','$http','$window','$rootScope','starManage',function($scope,$http,$window,$rootScope,starManage) {
+    .controller("searchController",['$scope','$http','$window','$rootScope','$location','starManage',function($scope,$http,$window,$rootScope,$location,starManage) {
         $http.get("http://localhost:3000/listAllPOIs")
             .then(function (response) {
                 $scope.pois = response.data;
+                $scope.catSet =[];
+                for (let i = 0; i < $scope.pois.length; i++)
+                    if(!$scope.catSet.includes($scope.pois[i].category))
+                        $scope.catSet.push($scope.pois[i].category);
                 if ($rootScope.userLogged === 'Yes') {
                     var req1 = {
                         method: 'POST',
@@ -14,6 +18,7 @@ angular.module("myApp")
                     $scope.num_of_fav = 0;
                     $http(req1).then(function (response) {
                         var pois_to_show = $scope.pois;
+
                         for (let i = 0; i < pois_to_show.length; i++) {
                             for (let j = 0; j < response.data.length; j++) {
                                 if (response.data[j].id == pois_to_show[i].id) {
@@ -22,6 +27,7 @@ angular.module("myApp")
                                     $scope.num_of_fav++;
                                 }
                             }
+
                         }
                     });
                 }
@@ -57,5 +63,9 @@ angular.module("myApp")
         $scope.goToRank = function(idx){
             angular.element('.modal').css('display','inline-block');
             $rootScope.pointOfInterest = $scope.pois[idx];
-        }
+        };
+        $scope.showPOI = function (num) {
+            $rootScope.poiToShow = $scope.pois[num];
+            $location.path('/showPOI');
+        };
     }]);

@@ -5,19 +5,19 @@
     <option>Category</option>
     <option>Rank</option>
 </select>
-<label>You have {{num_of_fav}} Favorites</label>
+<label style="float:right">You have {{num_of_fav}} Favorites</label>
 <br>
 <h1 class="explore_h1">Your Favorites</h1>
 
 <div class="container-all fav">
     <div class="container" ng-repeat="image in saved_pois">
-        <img ng-src="{{image.image}}" alt="">
+        <img ng-src="{{image.image}}" alt="" ng-click="showPOI($index)">
         <div class="click active active-2 active-3" ng-click="starClick($index)" id="fav_click{{$index}}">
             <span class="fa fa-star" id="fav_span{{$index}}"></span>
             <div class="ring" id="fav_ring{{$index}}"></div>
             <div class="ring2" id="fav_ring2{{$index}}"></div>
         </div>
-        <span class="title">{{image.name}}</span>
-        <span class="text">Category: {{image.category}}</span>
+        <span class="title" ng-click="showPOI($index)">{{image.name}}</span>
+        <span class="text" ng-click="showPOI($index)">Category: {{image.category}}</span>
     </div>
 </div>

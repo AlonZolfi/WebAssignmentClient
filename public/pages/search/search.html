@@ -5,20 +5,20 @@
     <option >Name</option>
     <option>Rank</option>
 </select>
-<label ng-show="$root.userLogged=='Yes'" style="float: right">You saved {{num_of_fav}} Favorites</label>
+<a ng-show="$root.userLogged=='Yes'" style="float: right" href="#!favorites">You saved {{num_of_fav}} Favorites</a>
 <h1 class="explore_h1">Explore City's Best Places</h1>
 
-<div class="container-all search">
-
-    <div class="container" ng-repeat="image in pois">
-        <img ng-src="{{image.image}}" alt="">
+<div class="container-all search" ng-repeat="cat in catSet">
+    <h2>{{cat}}</h2>
+    <div class="container" ng-repeat="image in pois" ng-show="image.category==cat">
+        <img ng-src="{{image.image}}" alt="" ng-click="showPOI($index)">
         <div class="click" ng-click="starClick($index)" id="search_click{{$index}}" ng-show="$root.userLogged=='Yes'">
             <span class="fa fa-star-o" id="search_span{{$index}}"></span>
             <div class="ring" id="search_ring{{$index}}"></div>
             <div class="ring2" id="search_ring2{{$index}}"></div>
         </div>
         <button ng-show="$root.userLogged=='Yes'" ng-click="goToRank($index)">Rank</button>
-        <span class="title">{{image.name}}</span>
-        <span class="text">Category: {{image.category}}</span>
+        <span class="title" ng-click="showPOI($index)">{{image.name}}</span>
+        <span class="text" ng-click="showPOI($index)">Category: {{image.category}}</span>
     </div>
 </div>

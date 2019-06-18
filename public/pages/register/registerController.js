@@ -1,5 +1,5 @@
 angular.module("myApp")
-    .controller("registerController",['$scope','$http','$window', function ($scope, $http, $window) {
+    .controller("registerController",['$scope','$http','$window','$location', function ($scope, $http, $window,$location) {
         $scope.submit = function(){
             if($scope.category.length <= 1){
                 $window.alert("Please choose more than 2 interests");
@@ -28,10 +28,10 @@ angular.module("myApp")
                     }
                 ],
                 interests: likedCategories
-            }
+            };
             var myJSON = JSON.stringify(myObj);
             $http.post('http://localhost:3000/registerUser', myJSON)
-                .then(function (response, $location) {
+                .then(function (response) {
                     alert("Registered Successfully");
                     $location.path('/login');
                 })

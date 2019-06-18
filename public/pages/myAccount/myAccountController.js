@@ -31,7 +31,7 @@ angular.module("myApp")
                     }
                     else
                     {
-                        $scope.stringSaved = "Your saved Point Of Interest"
+                        $scope.stringSaved = "Your last saved Point Of Interest";
                         $scope.saved = saved = [];
                         saved.push(response.data[0]);
                         if(response.data.length>1)
@@ -41,5 +41,12 @@ angular.module("myApp")
                 function errorCallback(response) {
                     console.log("onononon");
                 });
-
+            $scope.showPOIRecommended = function (num) {
+                $rootScope.poiToShow = $scope.rec[num];
+                $location.path('/showPOI');
+            };
+            $scope.showPOISaved = function (num) {
+                $rootScope.poiToShow = $scope.saved[num];
+                $location.path('/showPOI');
+            };
         }]);

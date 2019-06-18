@@ -21,19 +21,23 @@ body, html{
     height: auto;
 }
 
+.container-all.showPOI{
+    width: 100%;
+    text-align: center;
+}
+
 .container-all.home{
     width: fit-content;
     margin: 100px;
     height: auto;
 }
+
 .container-all.my-account{
      width: fit-content;
      margin-left: 25%;
      height: auto;
 }
-.container-all.my-account>h4{
-    font-size: 50px;
-}
+
 .container{
     width: calc(33% - 3px);
     overflow:hidden;
@@ -52,6 +56,16 @@ body, html{
     overflow:hidden;
     cursor:pointer;
     height:30%;
+}
+
+.showPOI > .container > img{
+    width: 100%;
+    transition-duration: .3s;
+    max-width: 100%;
+    display:inline-block;
+    overflow:hidden;
+    cursor:pointer;
+    height:50%;
 }
 
 .fav > .container > img{
@@ -89,12 +103,20 @@ body, html{
     transition-duration: .3s;
     max-width: 100%;
     cursor:pointer;
-    height: 50%;
+    height: 33%;
     text-align: center;
+}
+.my-account > .container{
+    text-align: center;
+}
+
+.my-account h4{
+    margin-top: 50px;
+    font-size: 20px;
 }
 .saved{
     position: absolute;
-    top: 65%;
+    top: 50%;
 }
 .rec{
     position: absolute;

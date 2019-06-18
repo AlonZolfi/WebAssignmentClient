@@ -2,6 +2,14 @@ angular.module("myApp")
     .factory("getPOIService",['$http',function($http){
         var getData = {};
         getData.getPOIData = function(poi_id){
+            var req = {
+                method: 'PUT',
+                url: 'http://localhost:3000/increaseNumOfViews',
+                data: {
+                    poi_id: poi_id,
+                }
+            };
+            $http(req);
             return $http.get('http://localhost:3000/POIData/'+poi_id);
         };
         return getData;

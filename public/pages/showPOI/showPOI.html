@@ -1,3 +1,21 @@
-<div>
-    <img ng-src="{{poi.image}}">
+<div class="container-all showPOI">
+    <div class="container">
+        <h1>{{poi.name}}</h1>
+        <img ng-src="{{poi.image}}"><br/>
+        <label>{{poi.description}}</label><br/>
+        <label>{{poi.views}} people watched this place</label><br/>
+        <label ng-show="poi.rank!=0">Average Rank: {{poi.rank*20}}%</label><br/>
+        <label ng-show="poi.rank==0">Average Rank doesn't exist</label><br/>
+    </div>
+    <div ng-show="reviews.length>0" class="container" ng-repeat="rev in reviews">
+        <h1>Review {{$index+1}}</h1><br/>
+        <label>Review given on: {{rev.date}}</label><br/>
+        <label ng-hide="rev.review==undefined">User review: {{rev.review}}</label><br/>
+        <label ng-show="rev.review==undefined">User review not given</label><br/>
+        <label>Rank: {{rev.rank*20}}%</label>
+    </div>
+    <div ng-show="reviews.length==0" class="container" >
+        <label>No Reviews Given</label>
+    </div>
 </div>
+
