@@ -1,6 +1,10 @@
 angular.module("myApp")
-    .controller("registerController", function ($scope, $http) {
+    .controller("registerController",['$scope','$http','$window', function ($scope, $http, $window) {
         $scope.submit = function(){
+            if($scope.category.length <= 1){
+                $window.alert("Please choose more than 2 interests");
+                return;
+            }
             likedCategories = [];
             for (let i = 0; i < $scope.category.length; i++) {
                 likedCategories.push({interest:$scope.category[i].category_name});
@@ -65,7 +69,7 @@ angular.module("myApp")
         ];
         $scope.question1 = $scope.questionsOne[0];
         $scope.question2 = $scope.questionsTwo[0];
-    });
+    }]);
 
 var countries = [
     {

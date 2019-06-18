@@ -1,4 +1,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<label for="sortby">Sort By:</label>
+<select id="sortby" ng-change="sortBy()" ng-model="selected_sort">
+    <option selected hidden disabled>{{selected_sort}}</option>
+    <option>Category</option>
+    <option>Rank</option>
+</select>
 <label>You have {{num_of_fav}} Favorites</label>
 <br>
 <h1 class="explore_h1">Your Favorites</h1>

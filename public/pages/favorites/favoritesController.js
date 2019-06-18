@@ -19,5 +19,24 @@ angular.module("myApp")
                 .then(function(response){
                     $route.reload();
                 });
-        }
+        };
+        $scope.selected_sort = "";
+        $scope.sortBy = function () {
+            if ($scope.selected_sort === "Category") {
+                var compareName = function (poi1, poi2) {
+                    return poi1.category.localeCompare(poi2.category);
+                };
+                $scope.saved_pois.sort(compareName);
+            } else if ($scope.selected_sort === "Rank") {
+                var compareRank = function (poi1, poi2) {
+                    if (poi1.rank < poi2.rank)
+                        return 1;
+                    else if (poi1.rank > poi2.rank)
+                        return -1;
+                    else
+                        return 0;
+                };
+                $scope.saved_pois.sort(compareRank);
+            }
+        };
     }]);
