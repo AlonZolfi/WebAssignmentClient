@@ -1,7 +1,6 @@
 angular.module("myApp")
-    .controller("homeController", ['$scope','$http','$rootScope','$location', function($scope,$http,$rootScope,$location){
-        var minimalRank = 0;
-        $http.get('http://localhost:3000/randomPOI/'+minimalRank)
+    .controller("homeController", ['$scope','$http','$rootScope','$location','$window', function($scope,$http,$rootScope,$location,$window){
+        $http.get('http://localhost:3000/listAllPOIs')
             .then(function (response) {
                 $scope.images = images = [];
                 images.push(response.data[0]);
@@ -14,6 +13,5 @@ angular.module("myApp")
         $scope.showPOI = function (num) {
             $rootScope.poiToShow = images[num];
             $location.path('/showPOI');
-        }
-
+        };
     }]);

@@ -11,8 +11,11 @@ body, html{
 .home_h2{
     margin: 50px;
 }
+.about_h2{
+    margin: 20px;
+}
 
-.container-all.search, .container-all.fav{
+.container-all.search, .container-all.fav, .container-all.about{
     width: fit-content;
     margin: 0 auto;
     height: auto;
@@ -32,7 +35,7 @@ body, html{
     font-size: 50px;
 }
 .container{
-    width: calc(33% - 6px);
+    width: calc(33% - 3px);
     overflow:hidden;
     height: fit-content;
     margin:3px;
@@ -70,6 +73,17 @@ body, html{
     cursor:pointer;
     height: 50%;
 }
+
+.about > .container > img{
+    width: 100%;
+    transition-duration: .3s;
+    max-width: 100%;
+    display:block;
+    overflow:hidden;
+    cursor:pointer;
+    height: 50%;
+}
+
 .my-account > .container > img{
     width: 100%;
     transition-duration: .3s;
@@ -123,6 +137,10 @@ body, html{
     color:white;
     display: block;
     transition-duration: .3s;
+}
+.about_desc{
+    width: 100%;
+    text-align: center;
 }
 @media only screen and (max-width: 900px) {
     .container {

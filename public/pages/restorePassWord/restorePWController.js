@@ -11,7 +11,7 @@ let controller = angular.module("myApp")
                 var myJSON = JSON.stringify(myObj);
                 $http.post('http://localhost:3000/restorePassword ', myJSON)
                     .then(function (response) {
-                        $scope.passWD = "You password is: " + response.data.password;
+                        $scope.passWD = "Your password is: " + response.data.password;
                     })
                     .catch(function (error) {
                         $scope.passWD = "Something want wrong!";

@@ -1,7 +1,30 @@
-<h2>About</h2>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h2 class="about_h2">About Barcelona</h2>
 
-<!-- display button functionality -->
-<div>
-    <button ng-click="myFunc()">Click Me!</button>
-    <p>This button has been clicked {{ btnCount }} times.</p>
+<div class="container-all about">
+    <div class="about_desc">
+        <p>
+            Barcelona feels a bit surreal – appropriate, since Salvador Dali spent time here and Spanish Catalan architect Antoni Gaudí designed several of the city’s buildings.<br/>
+            Stepping into Gaudí’s Church of the Sacred Family is a bit like falling through the looking glass - a journey that you can continue with a visit to Park Güell.<br/>
+            Sip sangria at a sidewalk café in Las Ramblas while watching flamboyant street performers,
+            then create your own moveable feast by floating from tapas bar to tapas bar.<br/>
+        </p>
+    </div>
+    <div class="container" ng-click="showPOI(0)">
+        <img ng-src="{{images[0].image}}" alt="" >
+        <span class="title">{{images[0].name}}</span>
+        <span class="text">Category: {{images[0].category}}</span>
+    </div>
+    <div class="container" ng-click="showPOI(1)">
+        <img ng-src="{{images[1].image}}" alt="">
+        <span class="title">{{images[1].name}}</span>
+        <span class="text">Category: {{images[1].category}}</span>
+    </div>
+    <div class="container" ng-click="showPOI(2)">
+        <img ng-src="{{images[2].image}}" alt="">
+        <span class="title">{{images[2].name}}</span>
+        <span class="text">Category: {{images[2].category}}</span>
+    </div>
+
 </div>
+
