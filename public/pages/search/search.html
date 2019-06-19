@@ -1,21 +1,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div style="float:right">
+    <label for="search_input"></label>
+    <input id="search_input" type="text" ng-model="POISearched">
+    <input type="button" value="Search" ng-click="searchForPOI()">
+</div>
 <label for="sortby">Sort By:</label>
 <select id="sortby" ng-change="sortBy()" ng-model="selected_sort">
     <option selected hidden disabled>{{selected_sort}}</option>
     <option >Name</option>
     <option>Rank</option>
-</select>
+</select><br/>
+<label for="cat_filter">Filter By Category:</label>
+<select id="cat_filter"ng-model="cat_select" name="cat_select"
+        ng-options="cat for cat in catToSave" ng-change="filterByCategory()"></select><br/>
+
+
 <a ng-show="$root.userLogged=='Yes'" style="float: right" href="#!favorites">You saved {{num_of_fav}} Favorites</a>
 <h1 class="explore_h1">Explore City's Best Places</h1>
+
 
 <div class="container-all search" ng-repeat="cat in catSet">
     <h2>{{cat}}</h2>
     <div class="container" ng-repeat="image in pois" ng-show="image.category==cat">
         <img ng-src="{{image.image}}" alt="" ng-click="showPOI($index)">
-        <div class="click" ng-click="starClick($index)" id="search_click{{$index}}" ng-show="$root.userLogged=='Yes'">
-            <span class="fa fa-star-o" id="search_span{{$index}}"></span>
-            <div class="ring" id="search_ring{{$index}}"></div>
-            <div class="ring2" id="search_ring2{{$index}}"></div>
+        <div class="click" ng-click="starClick($index,cat)" id="search_{{cat}}_click{{$index}}" ng-show="$root.userLogged=='Yes'">
+            <span class="fa fa-star-o" id="search_{{cat}}_span{{$index}}"></span>
+            <div class="ring" id="search_{{cat}}_ring{{$index}}"></div>
+            <div class="ring2" id="search_{{cat}}_ring2{{$index}}"></div>
         </div>
         <button ng-show="$root.userLogged=='Yes'" ng-click="goToRank($index)">Rank</button>
         <span class="title" ng-click="showPOI($index)">{{image.name}}</span>

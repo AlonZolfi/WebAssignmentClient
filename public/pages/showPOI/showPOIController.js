@@ -7,6 +7,10 @@ angular.module("myApp")
                 $scope.reviews.push(response.data[i]);
             }
         });
+        $scope.goToRank = function(idx){
+            angular.element('.modal').css('display','inline-block');
+            $rootScope.pointOfInterest = $scope.poi;
+        };
 
     }]);
 

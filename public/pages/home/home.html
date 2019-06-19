@@ -1,18 +1,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div ng-hide="$root.userLogged=='Yes'" style="text-align: center">
+    <h3>Are you a member? <a href="#!login">Login</a></h3>
+    <h3>Not a member? <a href="#!register">Sign Up</a></h3>
+</div>
 <h2 class="home_h2">Barcelona Website</h2>
 <div class="container-all home">
     <div class="container" >
-        <img ng-src="{{images[0].image}}" alt="" ng-click="showPOI(0)">
+        <img ng-src="{{images[0].image}}" alt="" ng-click="showPOI(0)"><br/>
+        <div class="click" ng-click="starClick(0)" id="home_click0" ng-show="$root.userLogged=='Yes'">
+            <span class="fa fa-star-o" id="home_span0"></span>
+            <div class="ring" id="home_ring0"></div>
+            <div class="ring2" id="home_ring20"></div>
+        </div>
+        <button ng-show="$root.userLogged=='Yes'" ng-click="goToRank(0)">Rank</button>
         <span class="title" ng-click="showPOI(0)">{{images[0].name}}</span>
         <span class="text" ng-click="showPOI(0)">Category: {{images[0].category}}</span>
     </div>
     <div class="container" >
-        <img ng-src="{{images[1].image}}" alt="" ng-click="showPOI(1)">
+        <img ng-src="{{images[1].image}}" alt="" ng-click="showPOI(1)"><br/>
+        <div class="click" ng-click="starClick(1)" id="home_click1" ng-show="$root.userLogged=='Yes'">
+            <span class="fa fa-star-o" id="home_span1"></span>
+            <div class="ring" id="home_ring1"></div>
+            <div class="ring2" id="home_ring21"></div>
+        </div>
+        <button ng-show="$root.userLogged=='Yes'" ng-click="goToRank(1)">Rank</button>
         <span class="title" ng-click="showPOI(1)">{{images[1].name}}</span>
         <span class="text" ng-click="showPOI(1)">Category: {{images[1].category}}</span>
     </div>
     <div class="container" >
-        <img ng-src="{{images[2].image}}" alt="" ng-click="showPOI(2)" >
+        <img ng-src="{{images[2].image}}" alt="" ng-click="showPOI(2)" ><br/>
+        <div class="click" ng-click="starClick(2)" id="home_click2" ng-show="$root.userLogged=='Yes'">
+            <span class="fa fa-star-o" id="home_span2"></span>
+            <div class="ring" id="home_ring2"></div>
+            <div class="ring2" id="home_ring22"></div>
+        </div>
+        <button ng-show="$root.userLogged=='Yes'" ng-click="goToRank(2)">Rank</button>
         <span class="title" ng-click="showPOI(2)">{{images[2].name}}</span>
         <span class="text" ng-click="showPOI(2)">Category: {{images[2].category}}</span>
     </div>

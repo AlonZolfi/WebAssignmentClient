@@ -4,7 +4,7 @@
         <img ng-src="{{poi.image}}"><br/>
         <label>{{poi.description}}</label><br/>
         <label>{{poi.views}} people watched this place</label><br/>
-        <label ng-show="poi.rank!=0">Average Rank: {{poi.rank*20}}%</label><br/>
+        <label ng-show="poi.rank!=0">Average Rank: {{poi.rank}}%/100%</label><br/>
         <label ng-show="poi.rank==0">Average Rank doesn't exist</label><br/>
     </div>
     <div ng-show="reviews.length>0" class="container" ng-repeat="rev in reviews">
@@ -12,10 +12,11 @@
         <label>Review given on: {{rev.date}}</label><br/>
         <label ng-hide="rev.review==undefined">User review: {{rev.review}}</label><br/>
         <label ng-show="rev.review==undefined">User review not given</label><br/>
-        <label>Rank: {{rev.rank*20}}%</label>
+        <label>Rank: {{rev.rank}}%/100%</label>
     </div>
     <div ng-show="reviews.length==0" class="container" >
         <label>No Reviews Given</label>
     </div>
+    <button ng-show="$root.userLogged=='Yes'" ng-click="goToRank(1)">Add Review</button>
 </div>
 

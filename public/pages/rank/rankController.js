@@ -11,16 +11,19 @@ angular.module("myApp")
                 },
                 data: {
                     poi_id: $rootScope.pointOfInterest.id,
-                    rank: form.rank_number,
+                    rank: form.rank_number*20,
                     review: form.desc
                 }
             };
             $http(req)
-                .then(function (response, $location) {
+                .then(function (response) {
                     $window.alert("Review Added Successfully");
                     angular.element('.modal').css('display','none');
-                    form.reset();
                 })
+                .catch(function(error){
+                    if(error.data.message.includes("PRIMARY KEY"))
+                        $window.alert("You have already added review for this POI.")
+                });
         };
         $window.onkeydown=function (event){
             if(event.key === "Escape") {
@@ -29,5 +32,5 @@ angular.module("myApp")
         };
         $scope.closeRankWindow = function (){
             angular.element('.modal').css('display','none');
-        }
+        };
     }]);

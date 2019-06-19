@@ -1,7 +1,7 @@
 // poi controller
 angular.module("myApp")
-    .controller("myAccountController", [ '$scope','$http', '$location','$rootScope','$window',
-        function ($scope,$http, $location, $rootScope, $window) {
+    .controller("myAccountController", [ '$scope','$http', '$location','$rootScope','$window','starManage',
+        function ($scope,$http, $location, $rootScope, $window, starManage) {
             var req = {
                 method: 'POST',
                 url: 'http://localhost:3000/private/recommendedPOI',
@@ -13,9 +13,27 @@ angular.module("myApp")
                     $scope.rec = rec = [];
                     rec.push(response.data[0]);
                     rec.push(response.data[1]);
+                    var req1 = {
+                        method: 'POST',
+                        url: 'http://localhost:3000/private/listFavPOI',
+                        headers: {
+                            'x-auth-token': $window.sessionStorage.getItem("token")
+                        }
+                    };
+                    $http(req1).then(function (response) {
+                        var pois_to_show = rec;
+                        for (let i = 0; i < pois_to_show.length; i++) {
+                            for (let j = 0; j < response.data.length; j++) {
+                                if (response.data[j].id == pois_to_show[i].id) {
+                                    angular.element('#rec_click' + i).addClass('active active-2 active-3');
+                                    angular.element('#rec_span' + i).addClass('fa-star').removeClass('fa-star-o');
+                                }
+                            }
+
+                        }
+                    });
                 },
                 function errorCallback(response) {
-                    console.log("onononon");
                 });
 
             var req2 = {
@@ -39,7 +57,7 @@ angular.module("myApp")
                     }
                 },
                 function errorCallback(response) {
-                    console.log("onononon");
+
                 });
             $scope.showPOIRecommended = function (num) {
                 $rootScope.poiToShow = $scope.rec[num];
@@ -48,5 +66,20 @@ angular.module("myApp")
             $scope.showPOISaved = function (num) {
                 $rootScope.poiToShow = $scope.saved[num];
                 $location.path('/showPOI');
+            };
+            $scope.starClick = function (idx, type) {
+                if(type=='rec')
+                    starManage.manageStar(type, idx, $scope.rec[idx].id);
+                else {
+                    starManage.manageStar(type, idx, $scope.saved[idx].id);
+                    $scope.saved.splice(idx,1);
+                }
+            };
+            $scope.goToRank = function(idx,type){
+                angular.element('.modal').css('display','inline-block');
+                if(type=='rec')
+                    $rootScope.pointOfInterest = $scope.rec[idx];
+                else
+                    $rootScope.pointOfInterest = $scope.saved[idx];
             };
         }]);

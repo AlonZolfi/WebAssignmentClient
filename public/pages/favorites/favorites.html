@@ -7,6 +7,7 @@
 </select>
 <label style="float:right">You have {{num_of_fav}} Favorites</label>
 <br>
+<input type="button" ng-click="clickSaved()" style="float: right" value="Save Favorites Order"/>
 <h1 class="explore_h1">Your Favorites</h1>
 
 <div class="container-all fav">
@@ -19,5 +20,8 @@
         </div>
         <span class="title" ng-click="showPOI($index)">{{image.name}}</span>
         <span class="text" ng-click="showPOI($index)">Category: {{image.category}}</span>
+        <button ng-show="$root.userLogged=='Yes'" ng-click="goToRank($index)">Rank</button>
+        <input type="button" value="&uarr;" ng-click="up($index)" ng-show="$index>0">
+        <input type="button" value="&darr;" ng-click="down($index)" ng-show="$index<saved_pois.length-1">
     </div>
 </div>

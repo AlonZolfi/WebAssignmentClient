@@ -24,4 +24,4 @@ angular.module("myApp")
             $scope.restorePW = function () {
                 $location.path("/restorePW");
             };
-        }])
+        }]);

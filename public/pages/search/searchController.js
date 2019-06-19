@@ -1,12 +1,15 @@
 angular.module("myApp")
-    .controller("searchController",['$scope','$http','$window','$rootScope','$location','starManage',function($scope,$http,$window,$rootScope,$location,starManage) {
+    .controller("searchController",['$scope','$http','$window','$rootScope','$location','starManage','$route',function($scope,$http,$window,$rootScope,$location,starManage,$route) {
         $http.get("http://localhost:3000/listAllPOIs")
             .then(function (response) {
-                $scope.pois = response.data;
+                $scope.pois = $scope.poisToSave = response.data;
                 $scope.catSet =[];
+                $scope.catToSave = [];
+                $scope.catToSave.push("All");
                 for (let i = 0; i < $scope.pois.length; i++)
-                    if(!$scope.catSet.includes($scope.pois[i].category))
+                    if (!$scope.catSet.includes($scope.pois[i].category))
                         $scope.catSet.push($scope.pois[i].category);
+                    Array.prototype.push.apply( $scope.catToSave,$scope.catSet);
                 if ($rootScope.userLogged === 'Yes') {
                     var req1 = {
                         method: 'POST',
@@ -22,8 +25,8 @@ angular.module("myApp")
                         for (let i = 0; i < pois_to_show.length; i++) {
                             for (let j = 0; j < response.data.length; j++) {
                                 if (response.data[j].id == pois_to_show[i].id) {
-                                    angular.element('#search_click' + i).addClass('active active-2 active-3');
-                                    angular.element('#search_span' + i).addClass('fa-star').removeClass('fa-star-o');
+                                    angular.element('#search_'+response.data[j].category+'_click' + i).addClass('active active-2 active-3');
+                                    angular.element('#search_'+response.data[j].category+'_span' + i).addClass('fa-star').removeClass('fa-star-o');
                                     $scope.num_of_fav++;
                                 }
                             }
@@ -51,13 +54,13 @@ angular.module("myApp")
                 $scope.pois.sort(compareRank);
             }
         };
-        $scope.starClick = function (idx) {
-            starManage.manageStar("search",idx,$scope.pois[idx].id)
+        $scope.starClick = function (idx,category) {
+            starManage.manageStar("search_"+category,idx,$scope.pois[idx].id)
                 .then(function() {
-                    if (angular.element('#search_span' + idx).hasClass("fa-star"))
-                        $scope.num_of_fav--;
-                    else
+                    if (angular.element('#search_'+category+'_span' + idx).hasClass("fa-star"))
                         $scope.num_of_fav++;
+                    else
+                        $scope.num_of_fav--;
                 });
         };
         $scope.goToRank = function(idx){
@@ -68,4 +71,32 @@ angular.module("myApp")
             $rootScope.poiToShow = $scope.pois[num];
             $location.path('/showPOI');
         };
+        $scope.filterByCategory = function (){
+            if($scope.cat_select==="All") {
+                $scope.pois = $scope.poisToSave;
+                $scope.catSet = [];
+                for (let i = 1; i < $scope.catToSave.length; i++) {
+                    $scope.catSet.push($scope.catToSave[i]);
+                }
+                $route.reload();
+            }
+            $scope.catSet = [];
+            $scope.catSet.push($scope.cat_select);
+        };
+        $scope.poiSearched = "";
+        $scope.searchForPOI = function(){
+
+            for (let i = 0; i < $scope.pois.length; i++) {
+                if($scope.POISearched===$scope.pois[i].name){
+                    var poi = $scope.pois[i];
+                    $scope.pois = [];
+                    $scope.pois.push(poi);
+                    $scope.catSet = [];
+                    $scope.catSet.push(poi.category);
+                    return;
+                }
+            }
+            $scope.catSet = [];
+            $scope.catSet.push("No results found");
+        }
     }]);

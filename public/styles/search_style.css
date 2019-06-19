@@ -28,11 +28,11 @@ body, html{
 
 .container-all.home{
     width: fit-content;
-    margin: 100px;
+    margin: 75px;
     height: auto;
 }
 
-.container-all.my-account{
+.container-all.my-account.saved, .container-all.my-account.rec{
      width: fit-content;
      margin-left: 25%;
      height: auto;
@@ -103,10 +103,7 @@ body, html{
     transition-duration: .3s;
     max-width: 100%;
     cursor:pointer;
-    height: 33%;
-    text-align: center;
-}
-.my-account > .container{
+    height: 50%;
     text-align: center;
 }
 
@@ -116,10 +113,9 @@ body, html{
 }
 .saved{
     position: absolute;
-    top: 50%;
+    top: 80%
 }
 .rec{
-    position: absolute;
     top: 5%;
 }
 .title{
