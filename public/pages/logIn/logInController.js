@@ -12,7 +12,7 @@ angular.module("myApp")
                         $location.path("/myAccount");
                     })
                     .catch(function (error) {
-                        //console.log("onononon");
+                        $window.alert("Wrong username or password");
                     });
             };
             $scope.logOut = function () {

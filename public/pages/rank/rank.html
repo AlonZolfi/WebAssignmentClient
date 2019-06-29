@@ -1,7 +1,7 @@
 <div class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-        <form class="form-style-8" name="rankForm" ng-submit="submit(this)" novalidate autocomplete="off">
+        <form id="rank_form" class="form-style-8" name="rankForm" ng-submit="submit(this)" novalidate autocomplete="off">
             <h3>Rank {{$root.pointOfInterest.name}}</h3>
             <div>
                 <input type="number" min="1" max="5" name="rank_number" ng-model="rank_number" placeholder="Your Rank" required>
