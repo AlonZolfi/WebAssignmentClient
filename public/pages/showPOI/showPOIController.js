@@ -1,5 +1,6 @@
 angular.module("myApp")
-    .controller("showPOIController",['$scope','$http','$rootScope','getPOIService',function ($scope, $http, $rootScope, getPOIService) {
+    .controller("showPOIController",['$scope','$http','$rootScope','getPOIService',
+        function ($scope, $http, $rootScope, getPOIService) {
         getPOIService.getPOIData($rootScope.poiToShow.id).then(function(response){
             $scope.poi = response.data[0];
             $scope.reviews = [];
@@ -11,7 +12,6 @@ angular.module("myApp")
             angular.element('.modal').css('display','inline-block');
             $rootScope.pointOfInterest = $scope.poi;
         };
-
     }]);
 
 

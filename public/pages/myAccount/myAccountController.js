@@ -78,7 +78,7 @@ angular.module("myApp")
                         };
                         $http(req2).then(function (response) {
                             if (response.data.length == 0) {
-                                $scope.stringSaved = "You did'nt save any Point Of Interest";
+                                $scope.stringSaved = "You didn't save any Point Of Interest";
                                 $scope.saved = [];
                             } else {
                                 $scope.stringSaved = "Your last saved Point Of Interest";
@@ -89,6 +89,19 @@ angular.module("myApp")
                                 for (let j = 0; j < saved.length; j++) {
                                     angular.element('#saved_click' + j).addClass('active active-2 active-3');
                                     angular.element('#saved_span' + j).addClass('fa-star').removeClass('fa-star-o');
+                                }
+                                for (let i = 0; i < $scope.rec.length; i++) {
+                                    var found = false;
+                                    for (let j = 0; j < saved.length; j++) {
+                                        if ($scope.rec[i].id == saved[j].id) {
+                                            found = true;
+                                            break;
+                                        }
+                                    }
+                                    if(!found){
+                                        angular.element('#rec_click' + i).removeClass('active active-2 active-3');
+                                        angular.element('#rec_span' + i).removeClass('fa-star').addClass('fa-star-o');
+                                    }
                                 }
                             }
                         });

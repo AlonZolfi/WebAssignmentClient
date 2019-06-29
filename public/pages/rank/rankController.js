@@ -1,6 +1,6 @@
 angular.module("myApp")
-    .controller("rankController",['$scope','$http','$window','$rootScope', function ($scope, $http,$window,$rootScope) {
-        $scope.submit = function (rank_form ) {
+    .controller("rankController",['$scope','$http','$window','$rootScope','$route', function ($scope, $http,$window,$rootScope,$route) {
+        $scope.submit = function (rank_form) {
             if(rank_form.desc===undefined)
                 rank_form.desc="";
             var req = {
@@ -9,7 +9,7 @@ angular.module("myApp")
                 headers: {
                     'x-auth-token': $window.sessionStorage.getItem("token")
                 },
-                data: {
+                data:{
                     poi_id: $rootScope.pointOfInterest.id,
                     rank: rank_form.rank_number*20,
                     review: rank_form.desc
@@ -20,6 +20,7 @@ angular.module("myApp")
                     $window.alert("Review Added Successfully");
                     angular.element('.modal').css('display','none');
                     angular.element('#rank_form')[0].reset();
+                    $route.reload();
                 })
                 .catch(function(error){
                     if(error.data.message.includes("PRIMARY KEY")) {
