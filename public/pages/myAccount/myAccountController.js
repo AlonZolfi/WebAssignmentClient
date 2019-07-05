@@ -90,18 +90,18 @@ angular.module("myApp")
                                     angular.element('#saved_click' + j).addClass('active active-2 active-3');
                                     angular.element('#saved_span' + j).addClass('fa-star').removeClass('fa-star-o');
                                 }
-                                for (let i = 0; i < $scope.rec.length; i++) {
-                                    var found = false;
-                                    for (let j = 0; j < saved.length; j++) {
-                                        if ($scope.rec[i].id == saved[j].id) {
-                                            found = true;
-                                            break;
-                                        }
+                            }
+                            for (let i = 0; i < $scope.rec.length; i++) {
+                                var found = false;
+                                for (let j = 0; j < $scope.saved.length; j++) {
+                                    if ($scope.rec[i].id == $scope.saved[j].id) {
+                                        found = true;
+                                        break;
                                     }
-                                    if(!found){
-                                        angular.element('#rec_click' + i).removeClass('active active-2 active-3');
-                                        angular.element('#rec_span' + i).removeClass('fa-star').addClass('fa-star-o');
-                                    }
+                                }
+                                if(!found){
+                                    angular.element('#rec_click' + i).removeClass('active active-2 active-3');
+                                    angular.element('#rec_span' + i).removeClass('fa-star').addClass('fa-star-o');
                                 }
                             }
                         });

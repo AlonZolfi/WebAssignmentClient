@@ -7,7 +7,7 @@ angular.module("myApp")
             }
             likedCategories = [];
             for (let i = 0; i < $scope.category.length; i++) {
-                likedCategories.push({interest:$scope.category[i].category_name});
+                likedCategories.push({interest:$scope.category[i]});
             }
             var myObj = {
                 username: $scope.user_name.valueOf(),
@@ -15,7 +15,7 @@ angular.module("myApp")
                 firstname: $scope.first_name.valueOf(),
                 lastname: $scope.last_name.valueOf(),
                 city: $scope.city.valueOf(),
-                country: $scope.country.valueOf().Name,
+                country: $scope.country.valueOf().name,
                 email: $scope.email.valueOf(),
                 authQuestion:[
                     {
@@ -36,7 +36,7 @@ angular.module("myApp")
                     $location.path('/login');
                 })
                 .catch(function(error){
-                    if(error.data.message.includes("PRIMARY KEY"))
+                    if(error.data.message != undefined && error.data.message.includes("PRIMARY KEY"))
                         alert("Please choose a different user name.")
                 });
         };
@@ -47,10 +47,12 @@ angular.module("myApp")
             .then(function(response){
                 $scope.interests = response.data;
                 $scope.category = response.data[0].category_name;
-
             });
-        $scope.countries = countries;
-        $scope.country = countries[0];
+        $http.get('http://localhost:3000/listCountries')
+            .then(function(response){
+                $scope.countries = response.data;
+                $scope.country = response.data[0].name;
+            });
         $scope.questionsOne = [
             {
                 "question": "Whats the name of your elementary school?"
@@ -71,7 +73,7 @@ angular.module("myApp")
         $scope.question2 = $scope.questionsTwo[0];
     }]);
 
-var countries = [
+/*var countries = [
     {
         "ID": "1",
         "Name": "Australia"
@@ -120,4 +122,4 @@ var countries = [
         "ID": "12",
         "Name": "USA"
     }
-]
+]*/

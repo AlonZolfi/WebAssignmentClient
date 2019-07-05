@@ -85,10 +85,9 @@ angular.module("myApp")
         };
         $scope.poiSearched = "";
         $scope.searchForPOI = function(){
-
-            for (let i = 0; i < $scope.pois.length; i++) {
-                if($scope.POISearched===$scope.pois[i].name){
-                    var poi = $scope.pois[i];
+            for (let i = 0; i < $scope.poisToSave.length; i++) {
+                if($scope.POISearched.toUpperCase()===$scope.poisToSave[i].name.toUpperCase()){
+                    var poi = $scope.poisToSave[i];
                     $scope.pois = [];
                     $scope.pois.push(poi);
                     $scope.catSet = [];

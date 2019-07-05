@@ -19,24 +19,28 @@ angular.module("myApp")
                 .then(function (response) {
                     $window.alert("Review Added Successfully");
                     angular.element('.modal').css('display','none');
-                    angular.element('#rank_form')[0].reset();
+                    resetRankForm();
                     $route.reload();
                 })
                 .catch(function(error){
                     if(error.data.message.includes("PRIMARY KEY")) {
                         $window.alert("You have already added review for this POI.");
-                        angular.element('#rank_form')[0].reset();
+                        resetRankForm();
                     }
                 });
         };
         $window.onkeydown=function (event){
             if(event.key === "Escape") {
                 angular.element('.modal').css('display','none');
-                angular.element('#rank_form')[0].reset();
+                resetRankForm();
             }
         };
         $scope.closeRankWindow = function (){
             angular.element('.modal').css('display','none');
-            angular.element('#rank_form')[0].reset();
+            resetRankForm();
         };
     }]);
+
+function resetRankForm(){
+    angular.element('#rank_form')[0].reset();
+}

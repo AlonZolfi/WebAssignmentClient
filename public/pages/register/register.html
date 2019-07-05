@@ -44,13 +44,14 @@
         <div>
 
             <select ng-model="country" name="country"
-                    ng-options="x.Name for x in countries" required>
+                    ng-options="x.name for x in countries" required>
             </select>
             <span ng-show="registerForm.country.$error.required && registerForm.country.$touched">This field is required!<br/></span>
         </div>
         <div>
             <select id="interests" ng-model="category" name="category"
-                    ng-options="x.category_name for x in interests" multiple>2 required>
+                     multiple required>
+                <option ng-repeat="x in interests">{{x.category_name}}</option>
             </select>
             <span ng-show="registerForm.category.$error.required && registerForm.category.$touched">This field is required!<br/></span>
         </div>

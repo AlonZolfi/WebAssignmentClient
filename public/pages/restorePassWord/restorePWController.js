@@ -14,7 +14,7 @@ let controller = angular.module("myApp")
                         $scope.passWD = "Your password is: " + response.data.password;
                     })
                     .catch(function (error) {
-                        $scope.passWD = "Something want wrong!";
+                        $scope.passWD = "Something went wrong!";
                     });
             };
             $scope.questions = [
